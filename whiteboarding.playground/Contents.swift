@@ -57,32 +57,57 @@
 //
 //print(isPalindrome2(str: "tacocat"))
 
-///Integer Reversal
-func reverseInt(_ int: Int) -> Int {
+/////Integer Reversal
+//func reverseInt(_ int: Int) -> Int {
+//
+//    let reversed = abs(int)
+//    if int < 0 {
+//        return (-Int(String(String(reversed).reversed()))!)
+//    } else {
+//        return Int(String(String(reversed).reversed()))!
+//    }
+//
+//}
+//
+//func reverse(_ x: Int) -> Int {
+//    var remain = abs(x)
+//    var reverseNum = 0
+//    while remain != 0 {
+//        reverseNum = (reverseNum * 10) + (remain % 10)
+//        print("reverseNum:", reverseNum)
+//        remain = remain/10
+//        print("remain:", remain)
+//    }
+//    if reverseNum > Int32.max {
+//        return 0
+//    }
+//    return x > 0 ? reverseNum : -reverseNum
+//}
+//
+//reverse(98)
+
+///MaxChar
+func maxChar(in string: String) -> String {
+    var dict = [Character : Int]()
+    var max = 0
+    var maxChar = ""
     
-    let reversed = abs(int)
-    if int < 0 {
-        return (-Int(String(String(reversed).reversed()))!)
-    } else {
-        return Int(String(String(reversed).reversed()))!
+    for char in string {
+        if dict[char] == nil {
+            dict[char] = 1
+        } else {
+            dict[char]! += 1
+        }
     }
     
+    for (key, value) in dict {
+        if value > max {
+            max = value
+            maxChar = String(key)
+        }
+    }
+    
+    return maxChar
 }
 
-func reverse(_ x: Int) -> Int {
-    var remain = abs(x)
-    var reverseNum = 0
-    while remain != 0 {
-        reverseNum = (reverseNum * 10) + (remain % 10)
-        print("reverseNum:", reverseNum)
-        remain = remain/10
-        print("remain:", remain)
-    }
-    if reverseNum > Int32.max {
-        return 0
-    }
-    return x > 0 ? reverseNum : -reverseNum
-}
-
-reverse(98)
-
+maxChar(in: "Jenny")
