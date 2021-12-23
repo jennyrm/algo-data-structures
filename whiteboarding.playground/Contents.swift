@@ -114,25 +114,35 @@
 
 ///FizzBuzz
 
-///Array Chunking
-func chunk(array: [String], size: Int) -> [[String]]{
-    var chunkedArr = [[String]]()
-    var chunk = [String]()
+/////Array Chunking
+//func chunk(array: [String], size: Int) -> [[String]]{
+//    var chunkedArr = [[String]]()
+//    var chunk = [String]()
+//
+//    for item in array {
+//        chunk.append(item)
+//
+//        if chunk.count == size {
+//            chunkedArr.append(chunk)
+//            chunk.removeAll()
+//        }
+//    }
+//
+//    if !chunk.isEmpty {
+//        chunkedArr.append(chunk)
+//    }
+//
+//    return chunkedArr
+//}
+
+//chunk(array: ["1", "2", "3", "4", "5"], size: 2)
+
+///Anagrams
+func isAnagram(stringA: String, stringB: String) -> Bool {
+    let stringASorted = stringA.lowercased().sorted()
+    let stringBSorted = stringB.lowercased().sorted()
     
-    for item in array {
-        chunk.append(item)
-        
-        if chunk.count == size {
-            chunkedArr.append(chunk)
-            chunk.removeAll()
-        }
-    }
-    
-    if !chunk.isEmpty {
-        chunkedArr.append(chunk)
-    }
-    
-    return chunkedArr
+    return stringASorted == stringBSorted
 }
 
-chunk(array: ["1", "2", "3", "4", "5"], size: 2)
+isAnagram(stringA: "jenny", stringB: "ennjy")
