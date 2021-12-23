@@ -86,28 +86,53 @@
 //
 //reverse(98)
 
-///MaxChar
-func maxChar(in string: String) -> String {
-    var dict = [Character : Int]()
-    var max = 0
-    var maxChar = ""
+/////MaxChar
+//func maxChar(in string: String) -> String {
+//    var dict = [Character : Int]()
+//    var max = 0
+//    var maxChar = ""
+//
+//    for char in string {
+//        if dict[char] == nil {
+//            dict[char] = 1
+//        } else {
+//            dict[char]! += 1
+//        }
+//    }
+//
+//    for (key, value) in dict {
+//        if value > max {
+//            max = value
+//            maxChar = String(key)
+//        }
+//    }
+//
+//    return maxChar
+//}
+//
+//maxChar(in: "Jenny")
+
+///FizzBuzz
+
+///Array Chunking
+func chunk(array: [String], size: Int) -> [[String]]{
+    var chunkedArr = [[String]]()
+    var chunk = [String]()
     
-    for char in string {
-        if dict[char] == nil {
-            dict[char] = 1
-        } else {
-            dict[char]! += 1
+    for item in array {
+        chunk.append(item)
+        
+        if chunk.count == size {
+            chunkedArr.append(chunk)
+            chunk.removeAll()
         }
     }
     
-    for (key, value) in dict {
-        if value > max {
-            max = value
-            maxChar = String(key)
-        }
+    if !chunk.isEmpty {
+        chunkedArr.append(chunk)
     }
     
-    return maxChar
+    return chunkedArr
 }
 
-maxChar(in: "Jenny")
+chunk(array: ["1", "2", "3", "4", "5"], size: 2)
