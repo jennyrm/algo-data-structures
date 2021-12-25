@@ -137,12 +137,12 @@
 
 //chunk(array: ["1", "2", "3", "4", "5"], size: 2)
 
-///Anagrams
-func isAnagram(stringA: String, stringB: String) -> Bool {
-    let stringASorted = stringA.lowercased().sorted()
-    let stringBSorted = stringB.lowercased().sorted()
-    
-    return stringASorted == stringBSorted
-}
+/////Anagrams
+//func isAnagram(stringA: String, stringB: String) -> Bool {
+//    let stringASorted = stringA.lowercased().sorted()
+//    let stringBSorted = stringB.lowercased().sorted()
+//
+//    return stringASorted == stringBSorted
+//}
 
-isAnagram(stringA: "jenny", stringB: "ennjy")
+//isAnagram(stringA: "jenny!", stringB: "ennjy")
